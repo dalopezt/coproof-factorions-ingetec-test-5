@@ -1,5 +1,8 @@
-**Theorem.** The set of natural numbers that equal the sum of the factorials of their decimal digits is exactly $\{1, 2, 145, 40585\}$. That is, defining $S(n) = \sum_{d \,\in\, \text{digits}_{10}(n)} d!$, we have
-$$\bigl\{\, n \in \mathbb{N} \mid S(n) = n \,\bigr\} = \{1,\, 2,\, 145,\, 40585\}.$$
-Such numbers are known as **factorions** in base 10.
+**Theorem.** The set of natural numbers equal to the sum of the factorials of their decimal digits is exactly $\{1, 2, 145, 40585\}$. That is,
+$$\{\, n \in \mathbb{N} \mid \sum_{d \,\in\, \mathrm{digits}_{10}(n)} d! = n \,\} = \{1,\, 2,\, 145,\, 40585\}.$$
 
-*Proof.* Unsolved.
+*Proof.* We show set equality by proving both inclusions.
+
+$(\subseteq)$ Let $n \in \mathbb{N}$ satisfy $\sum_{d \in \mathrm{digits}_{10}(n)} d! = n$. By \textbf{Upper Bound}, every such $n$ satisfies $n \leq 2540160$. Hence $n$ belongs to the intersection of the solution set with $\{n \in \mathbb{N} \mid n \leq 2540160\}$. Applying \textbf{Finite Verification}, which asserts that this intersection equals $\{1, 2, 145, 40585\}$, we conclude $n \in \{1, 2, 145, 40585\}$.
+
+$(\supseteq)$ Let $n \in \{1, 2, 145, 40585\}$. By \textbf{Finite Verification}, every element of $\{1, 2, 145, 40585\}$ lies in the intersection of the solution set with $\{n \in \mathbb{N} \mid n \leq 2540160\}$, and in particular belongs to the solution set. Hence $\sum_{d \in \mathrm{digits}_{10}(n)} d! = n$. $\blacksquare$
